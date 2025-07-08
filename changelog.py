@@ -4,7 +4,6 @@ import glob
 import tomllib
 from pathlib import Path
 
-breakpoint()
 
 def read_options():
     tomlpath = Path("pyproject.toml")
