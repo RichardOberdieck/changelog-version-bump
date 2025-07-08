@@ -3,7 +3,7 @@ import re
 import glob
 import sys
 
-def main():
+def get_bump_version():
     "Must run after scriv print, to get the correct changes."
 
     with open("temp.md") as file:
@@ -29,19 +29,23 @@ def main():
 
 def clean():
     "Clean out the bump size indicators in changelog.d fragments"
-    print("cleaning")
     for file_path in glob.iglob('changelog.d/*'):
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
-            print(f"Cleaning {file_path}")
-            print(content)
+
         updated_content = re.sub(r'### (Major|Minor|Patch):', '###', content)
 
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(updated_content)
 
-if __name__ == "__main__":
+    os.remove("temp.md")
+
+def main():
+    get_bump_version()
     clean()
+
+if __name__ == "__main__":
+    main()
 
 
     
