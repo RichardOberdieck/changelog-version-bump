@@ -41,12 +41,8 @@ def clean():
             f.write(updated_content)
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "clean":
-        clean()
-        os.remove("temp.md")
-        exit(0)
-    else:
-        main()
+    clean()
+
 
     
     
