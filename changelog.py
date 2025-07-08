@@ -29,11 +29,12 @@ def main():
 
 def clean():
     "Clean out the bump size indicators in changelog.d fragments"
-
+    print("cleaning")
     for file_path in glob.iglob('changelog.d/*'):
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
-
+            print(f"Cleaning {file_path}")
+            print(content)
         updated_content = re.sub(r'### (Major|Minor|Patch):', '###', content)
 
         with open(file_path, 'w', encoding='utf-8') as f:
