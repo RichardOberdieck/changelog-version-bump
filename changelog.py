@@ -1,6 +1,20 @@
 import os
 import re
 import glob
+import tomllib
+from pathlib import Path
+
+breakpoint()
+
+def read_options():
+    tomlpath = Path("pyproject.toml")
+    toml_text = tomlpath.read_text(encoding="utf-8")
+    data = tomllib.loads(toml_text)
+    try:
+        options = data["tool"]["changelog-version-bump"]
+    except KeyError:
+        # No settings for us
+        return
 
 def main():
     "Must run after scriv print, to get the correct changes."
