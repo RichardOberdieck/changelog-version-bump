@@ -1,10 +1,10 @@
 import os
 import re
 import glob
+import sys
 
 def main():
     "Must run after scriv print, to get the correct changes."
-
 
     with open("temp.md") as file:
         lines = file.readlines()
@@ -40,7 +40,12 @@ def clean():
             f.write(updated_content)
 
 if __name__ == "__main__":
-    main()
-    clean()
-    os.remove("temp.md")
+    if len(sys.argv) > 1 and sys.argv[1] == "clean":
+        clean()
+        os.remove("temp.md")
+        exit(0)
+    else:
+        main()
+
+    
     
