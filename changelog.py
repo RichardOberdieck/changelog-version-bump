@@ -33,7 +33,7 @@ def clean():
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
 
-        updated_content = re.sub(r'### (Major|Minor|Patch):', '###', content)
+        updated_content = re.sub(r'# (Major|Minor|Patch):', '#', content)
 
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(updated_content)
