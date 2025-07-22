@@ -39,9 +39,22 @@ collate = "scriv print > temp.md && hatch version $(changelog-version-bump)  && 
 
 3) The actual magic is the `collate` comand that should run in `ci/cd` when you create tags / releases.
 
+# Pre-commit hook
 
+Some places (like Azure DevOps) do not render `.md` files automatically. So in order to clean them up, this repo also contains a pre-commit hook which automatically removes all commented out lines, removes superfluous empty lines and enforces that all lines have to start with a `#` or a `-`, which helps with formatting. It can be used as follows:
 
+```yaml
+repos:
+  - repo: changelog-version-bump
+    hooks:
+      - id: remove-comments
+        name: Remove comments from scriv .md files
+        entry: remove_scriv_comments.py
+        language: system
+        types: [markdown]
+        files: ^changelog\.d/.*\.md$
 
+```
 
 # FAQ
 Can you change the options and headings?
