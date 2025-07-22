@@ -9,7 +9,7 @@ dependencies = []
 
 [project.scripts]
 changelog-version-bump = "changelog:main"
-remove-comments = "remove-comments:remove_comments"
+remove-comments = "remove_comments.cli:main"
 
 [build-system]
 requires = ["setuptools>=61"]

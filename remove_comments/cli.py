@@ -5,7 +5,7 @@ import argparse
 from typing import Sequence
 
 
-def remove_comments(argv: Sequence[str] | None = None) -> int:    
+def main(argv: Sequence[str] | None = None) -> None:    
     parser = argparse.ArgumentParser(
         prog='remove-comments',
     )
@@ -39,4 +39,4 @@ def process_file(filename: str) -> str:
 
 
 if __name__ == "__main__":
-    remove_comments()
+    main()
