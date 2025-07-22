@@ -46,14 +46,9 @@ Some places (like Azure DevOps) do not render `.md` files automatically. So in o
 ```yaml
 repos:
   - repo: changelog-version-bump
+    rev: <insert-latest-release>
     hooks:
       - id: remove-comments
-        name: Remove comments from scriv .md files
-        entry: remove_scriv_comments.py
-        language: system
-        types: [markdown]
-        files: ^changelog\.d/.*\.md$
-
 ```
 
 # FAQ
