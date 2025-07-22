@@ -1,10 +1,22 @@
 import sys
 import re
 from pathlib import Path
+import argparse
+from typing import Sequence
 
 
-def remove_comments():
-    for filename in sys.argv[1:]:
+def remove_comments(argv: Sequence[str] | None = None) -> int:    
+    parser = argparse.ArgumentParser(
+        prog='remove-comments',
+    )
+    parser.add_argument(
+        'filenames',
+        nargs='*',
+        help='Filenames to process.',
+    )
+    args = parser.parse_args(argv)
+
+    for filename in args.filenames:
         print(filename)
         if filename.endswith(".md"):
             process_file(filename)
