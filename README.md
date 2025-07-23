@@ -45,7 +45,7 @@ Some places (like Azure DevOps) do not render `.md` files automatically. So in o
 
 ```yaml
 repos:
-  - repo: changelog-version-bump
+  - repo: https://github.com/banking-circle-advanced-analytics/changelog-version-bump
     rev: <insert-latest-release>
     hooks:
       - id: remove-comments
