@@ -1,6 +1,6 @@
 - id: remove-comments
   name: Remove comments from scriv .md files
   entry: remove-comments
-  language: system
+  language: python
   types: [markdown]
   files: ^changelog\.d/.*\.md$
