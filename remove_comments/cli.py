@@ -26,7 +26,6 @@ def process_file(filename: str) -> str:
     cleaned = '\n'.join(line for line in new_cleaned)
     Path(filename).write_text(cleaned + '\n', encoding="utf-8")
     # Automatically add file back
-    subprocess.run(["git", "add", filename], check=True, stdout=subprocess.PIPE)
 
 if __name__ == "__main__":
     main()
