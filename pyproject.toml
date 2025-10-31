@@ -1,8 +1,11 @@
 [project]
 name = "changelog-version-bump"
-version = "0.3.0"
+version = "0.4.0"
 description = "A CLI tool to detect version labels in temp.md"
-authors = [{ name = "Your Name", email = "you@example.com" }]
+authors = [
+    { name = "Richard Oberdieck", email = "rico@bankingcircle.com" },
+    { name = "Ruben Menke", email = "rum@bankingcircle.com" }
+    ]
 readme = "README.md"
 requires-python = ">=3.7"
 dependencies = []
@@ -10,6 +13,7 @@ dependencies = []
 [project.scripts]
 changelog-version-bump = "changelog:main"
 remove-comments = "remove_comments.cli:main"
+delete-folder = "delete_folder.cli:main"
 
 [build-system]
 requires = ["setuptools>=61"]

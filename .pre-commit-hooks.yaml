@@ -4,3 +4,7 @@
   language: python
   types: [markdown]
   files: ^changelog\.d/.*\.md$
+- id: delete-folder
+  name: Delete folder for generated content
+  entry: delete-folder
+  language: python
