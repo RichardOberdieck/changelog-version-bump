@@ -1,7 +1,6 @@
 import os
 import re
 import glob
-import sys
 
 def get_bump_version():
     "Must run after scriv print, to get the correct changes."
