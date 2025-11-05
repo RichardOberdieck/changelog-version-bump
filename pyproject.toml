@@ -11,9 +11,9 @@ requires-python = ">=3.7"
 dependencies = []
 
 [project.scripts]
-changelog-version-bump = "changelog:main"
-remove-comments = "hooks.remove_comments.cli:main"
-delete-folder = "hooks.delete_folder.cli:main"
+changelog-version-bump = "changelog-version-bump.changelog:main"
+remove-comments = "changelog-version-bump.remove_comments.cli:main"
+delete-folder = "changelog-version-bump.delete_folder.cli:main"
 
 [build-system]
 requires = ["setuptools>=61"]
