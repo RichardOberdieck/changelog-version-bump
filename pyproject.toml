@@ -1,6 +1,6 @@
 [project]
 name = "changelog-version-bump"
-version = "0.4.5"
+version = "0.4.6"
 description = "A CLI tool to detect version labels in temp.md"
 authors = [
     { name = "Richard Oberdieck", email = "rico@bankingcircle.com" },
@@ -14,6 +14,7 @@ dependencies = []
 changelog-version-bump = "changelog_version_bump.changelog:main"
 remove-comments = "changelog_version_bump.remove_comments.cli:main"
 delete-folder = "changelog_version_bump.delete_folder.cli:main"
+check-for-approvers = "changelog_version_bump.check_for_approvers.cli:main"
 
 [build-system]
 requires = ["setuptools>=61"]
